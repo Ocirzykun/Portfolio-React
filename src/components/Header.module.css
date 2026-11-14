@@ -1,0 +1,262 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 8%;
+    background: rgba(13, 13, 13, 0.92);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+    transition: .3s;
+}
+
+.logo {
+    font-size: 22px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.headerCta {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--green);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s;
+    letter-spacing: .5px;
+}
+
+.headerCta:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 0, .4);
+    transform: translateY(-2px);
+}
+
+/* ── MOBILE MENU TOGGLE ── */
+.menuToggle {
+    display: none;
+}
+
+.menuBtn {
+    display: none;
+    font-size: 28px;
+    color: var(--green);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.iconClose {
+    display: none;
+}
+
+.menuToggle:checked~.navbar {
+    display: flex;
+}
+
+.menuToggle:checked~.menuBtn .iconMenu {
+    display: none;
+}
+
+.menuToggle:checked~.menuBtn .iconClose {
+    display: block;
+}
+
+.navbar {
+    display: flex;
+    gap: 0;
+}
+
+/* ── NAVBAR LIST ── */
+.navList {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 0;
+}
+
+.navList>li {
+    position: relative;
+}
+
+.navList>li>a {
+    font-size: 14px;
+    color: #999;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 28px;
+    transition: .3s;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.navList>li>a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--green);
+    transition: width .3s;
+}
+
+.navList>li>a:hover,
+.navList>li>a.active {
+    color: var(--green);
+}
+
+.navList>li>a:hover::after,
+.navList>li>a.active::after {
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+/* ── DROPDOWN BUTTON ── */
+.dropdownBtn {
+    font-size: 14px;
+    color: #999;
+    font-weight: 500;
+    margin-left: 28px;
+    transition: .3s;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.dropdownBtn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--green);
+    transition: width .3s;
+}
+
+.dropdownBtn:hover {
+    color: var(--green);
+}
+
+.dropdownBtn:hover::after {
+    width: 100%;
+}
+
+/* ── DROPDOWN ARROW ── */
+.dropdownArrow {
+    font-size: 16px;
+    transition: transform .3s;
+    display: inline-block;
+}
+
+.dropdownArrow.rotate {
+    transform: rotate(180deg);
+}
+
+/* ── DROPDOWN MENU ── */
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    background: rgba(13, 13, 13, 0.97);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 8px 0;
+    list-style: none;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .5);
+}
+
+.dropdownMenu.show {
+    display: block;
+}
+
+.dropdownMenu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #999;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.dropdownMenu li a:hover {
+    color: var(--green);
+    background: rgba(0, 255, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .menuBtn {
+        display: block;
+    }
+
+    .headerCta {
+        display: none;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(13, 13, 13, .97);
+        padding: 20px 8%;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navList {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .navList>li>a {
+        margin-left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .dropdownBtn {
+        margin-left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .dropdownMenu {
+        position: static;
+        background: rgba(0, 255, 0, 0.05);
+        border: none;
+        border-radius: 8px;
+        box-shadow: none;
+        backdrop-filter: none;
+        min-width: auto;
+        padding: 4px 0 4px 16px;
+    }
+
+    .dropdownMenu li a {
+        font-size: 15px;
+        padding: 8px 16px;
+    }
+}

@@ -1,0 +1,120 @@
+.home {
+    min-height: 100vh;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 8% 60px;
+    text-align: center;
+}
+
+.heroSubtitle {
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+.home h1 {
+    font-size: 52px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.home h1 span {
+    color: var(--green);
+}
+
+.heroDesc {
+    font-size: 15px;
+    color: #777;
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* ── FILTER BAR ── */
+.filterBar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filterBtn {
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: #999;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.filterBtn:hover,
+.filterBtn.active {
+    background: var(--green);
+    color: var(--dark);
+    border-color: var(--green);
+}
+
+/* ── HERO IMAGES ── */
+.heroImages {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 900px;
+}
+
+.heroImgCard {
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+}
+
+.heroImgCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.heroImgCard:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .home h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 32px;
+    }
+
+    .heroImages {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .heroImgCard {
+        max-width: 100%;
+    }
+}

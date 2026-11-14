@@ -1,0 +1,48 @@
+.about {
+    background: var(--darker);
+    padding: 80px 8%;
+}
+
+.aboutHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.aboutIcon {
+    width: 50px;
+    height: 50px;
+    background: var(--green);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--dark);
+    flex-shrink: 0;
+}
+
+.aboutHeader h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.aboutHeader h2 span {
+    color: var(--green);
+}
+
+.aboutContent p {
+    color: #888;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 480px) {
+    .aboutHeader {
+        flex-direction: column;
+        text-align: center;
+    }
+}

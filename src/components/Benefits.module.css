@@ -1,0 +1,33 @@
+.benefits {
+    background: var(--dark);
+    padding: 80px 8%;
+}
+
+.benefitsList {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.benefitItem:last-child {
+    border-bottom: none;
+}
+
+.benefitItem i {
+    font-size: 22px;
+    color: var(--green);
+    flex-shrink: 0;
+}
+
+.benefitItem span {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+}

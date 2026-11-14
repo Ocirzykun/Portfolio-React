@@ -1,0 +1,53 @@
+.ctaSection {
+    background: var(--darker);
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.ctaSection h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.ctaSection h2 span {
+    color: var(--green);
+}
+
+.ctaHighlight {
+    color: var(--green) !important;
+    margin-bottom: 40px;
+}
+
+.ctaImages {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ctaImg {
+    width: 160px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.ctaImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.ctaImg:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .ctaSection h2 {
+        font-size: 30px;
+    }
+}
